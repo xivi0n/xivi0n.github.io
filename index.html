@@ -1,31 +1,37 @@
 <!DOCTYPE html>
 <html lang="sr">
+
 <head>
     <link rel="icon" href="img/favicon.ico">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/styles.css">
-    <script type="text/javascript" src="js/script.js"></script>
     <title>Kalkulator Profita</title>
 </head>
+
 <body>
     <div id="doge" onclick="doged()">
         <img class="doge_img" src="img/doge.png" alt="">
     </div>
     <div class="wrapper">
         <div class="header">
-            <div class="option selected" id="tab1" onclick="change_tab(1)">
+            <div class="option selected" id="tab0" onclick="change_tab(0)">
                 <div class="option_text">
                     Буџет
                 </div>
             </div>
-            <div class="option" id="tab2" onclick="change_tab(2)">
+            <div class="option" id="tab1" onclick="change_tab(1)">
                 <div class="option_text">
                     Улог
                 </div>
             </div>
+            <div class="option" id="tab2" onclick="change_tab(2)">
+                <div class="option_text">
+                    1Х2
+                </div>
+            </div>
         </div>
-        <div id="main1">
+        <div id="main0" class="main">
             <div class="input">
                 <div class="input_wrapper">
                     <div class="input_label">Буџет</div>
@@ -44,8 +50,42 @@
                     <input class="input_field" type="number" min="0" step="0.01" id="kvota2" oninput="budzet()">
                 </div>
             </div>
+            <div class="output">
+                <div class="output_inner">
+                    <div class="output_inner_label">
+                        <div class="output_inner_label_text">Улог на мању</div>
+                    </div>
+                    <div class="output_inner_wrapper">
+                        <div class="output_inner_wrapper_text" id="main0_ulog1"></div>
+                    </div>
+                </div>
+                <div class="output_inner">
+                    <div class="output_inner_label">
+                        <div class="output_inner_label_text">Улог на већу</div>
+                    </div>
+                    <div class="output_inner_wrapper">
+                        <div class="output_inner_wrapper_text" id="main0_ulog2"></div>
+                    </div>
+                </div>
+                <div class="output_inner">
+                    <div class="output_inner_label">
+                        <div class="output_inner_label_text">Профит</div>
+                    </div>
+                    <div class="output_inner_wrapper">
+                        <div class="output_inner_wrapper_text" id="main0_profit"></div>
+                    </div>
+                </div>
+                <div class="output_inner">
+                    <div class="output_inner_label">
+                        <div class="output_inner_label_text">Профит у Дин</div>
+                    </div>
+                    <div class="output_inner_wrapper">
+                        <div class="output_inner_wrapper_text" id="main0_profit_ukupno"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="main2" class="hidden">
+        <div id="main1" class="main hidden">
             <div class="input">
                 <div class="input_wrapper">
                     <div class="input_label">Улог на прву квоту</div>
@@ -64,42 +104,111 @@
                     <input class="input_field" type="number" min="0" step="0.01" id="kvota2_ulog" oninput="ulog()">
                 </div>
             </div>
+            <div class="output">
+                <div class="output_inner">
+                    <div class="output_inner_label">
+                        <div class="output_inner_label_text">Улог на мању</div>
+                    </div>
+                    <div class="output_inner_wrapper">
+                        <div class="output_inner_wrapper_text" id="main1_ulog1"></div>
+                    </div>
+                </div>
+                <div class="output_inner">
+                    <div class="output_inner_label">
+                        <div class="output_inner_label_text">Улог на већу</div>
+                    </div>
+                    <div class="output_inner_wrapper">
+                        <div class="output_inner_wrapper_text" id="main1_ulog2"></div>
+                    </div>
+                </div>
+                <div class="output_inner">
+                    <div class="output_inner_label">
+                        <div class="output_inner_label_text">Профит</div>
+                    </div>
+                    <div class="output_inner_wrapper">
+                        <div class="output_inner_wrapper_text" id="main1_profit"></div>
+                    </div>
+                </div>
+                <div class="output_inner">
+                    <div class="output_inner_label">
+                        <div class="output_inner_label_text">Профит у Дин</div>
+                    </div>
+                    <div class="output_inner_wrapper">
+                        <div class="output_inner_wrapper_text" id="main1_profit_ukupno"></div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="output">
-            <div class="output_inner">
-                <div class="output_inner_label">
-                    <div class="output_inner_label_text">Улог на мању</div>
-                </div>
-                <div class="output_inner_wrapper" >
-                    <div class="output_inner_wrapper_text" id="ulog1"></div>
+        <div id="main2" class="main hidden">
+            <div class="input">
+                <div class="input_wrapper">
+                    <div class="input_label">Буџет</div>
+                    <input class="input_field" type="number" min="0" step="0.01" id="budzet_1x2" oninput="kecx()">
                 </div>
             </div>
-            <div class="output_inner">
-                <div class="output_inner_label">
-                    <div class="output_inner_label_text">Улог на већу</div>
-                </div>
-                <div class="output_inner_wrapper" >
-                    <div class="output_inner_wrapper_text" id="ulog2"></div>
+            <div class="input">
+                <div class="input_wrapper">
+                    <div class="input_label">Квота на 1</div>
+                    <input class="input_field" type="number" min="0" step="0.01" id="kvota1_1x2" oninput="kecx()">
                 </div>
             </div>
-            <div class="output_inner">
-                <div class="output_inner_label">
-                    <div class="output_inner_label_text">Профит</div>
-                </div>
-                <div class="output_inner_wrapper" >
-                    <div class="output_inner_wrapper_text" id="profit"></div>
+            <div class="input">
+                <div class="input_wrapper">
+                    <div class="input_label">Квота на Х</div>
+                    <input class="input_field" type="number" min="0" step="0.01" id="kvotaX_1x2" oninput="kecx()">
                 </div>
             </div>
-            <div class="output_inner">
-                <div class="output_inner_label">
-                    <div class="output_inner_label_text">Профит у Дин</div>
+            <div class="input">
+                <div class="input_wrapper">
+                    <div class="input_label">Квота на 2</div>
+                    <input class="input_field" type="number" min="0" step="0.01" id="kvota2_1x2" oninput="kecx()">
                 </div>
-                <div class="output_inner_wrapper" >
-                    <div class="output_inner_wrapper_text" id="profit_ukupno"></div>
+            </div>
+            <div class="output">
+                <div class="output_inner">
+                    <div class="output_inner_label">
+                        <div class="output_inner_label_text">Улог на 1</div>
+                    </div>
+                    <div class="output_inner_wrapper">
+                        <div class="output_inner_wrapper_text" id="main2_ulog1"></div>
+                    </div>
+                </div>
+                <div class="output_inner">
+                    <div class="output_inner_label">
+                        <div class="output_inner_label_text">Улог на Х</div>
+                    </div>
+                    <div class="output_inner_wrapper">
+                        <div class="output_inner_wrapper_text" id="main2_ulogX"></div>
+                    </div>
+                </div>
+                <div class="output_inner">
+                    <div class="output_inner_label">
+                        <div class="output_inner_label_text">Улог на 2</div>
+                    </div>
+                    <div class="output_inner_wrapper">
+                        <div class="output_inner_wrapper_text" id="main2_ulog2"></div>
+                    </div>
+                </div>
+                <div class="output_inner">
+                    <div class="output_inner_label">
+                        <div class="output_inner_label_text">Профит</div>
+                    </div>
+                    <div class="output_inner_wrapper">
+                        <div class="output_inner_wrapper_text" id="main2_profit"></div>
+                    </div>
+                </div>
+                <div class="output_inner">
+                    <div class="output_inner_label">
+                        <div class="output_inner_label_text">Профит у Дин</div>
+                    </div>
+                    <div class="output_inner_wrapper">
+                        <div class="output_inner_wrapper_text" id="main2_profit_ukupno"></div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+<script type="text/javascript" src="js/script.js"></script>
+
 </html>
