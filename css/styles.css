@@ -2,6 +2,13 @@
     display:none!important;
 }
 
+.doged{
+    background-image: url(../img/background.jpg);
+    background-repeat: repeat;
+    background-color: none!important;
+    background-size: 30%;
+}
+
 .selected{
     background-color: #282828!important;
 }
@@ -19,7 +26,6 @@ body{
     width: 100vw;
     height: 100vh;
     background-color: #202020;
-    
 }
 
 .wrapper{
@@ -197,8 +203,9 @@ input[type=number] {
 .doge_img{
     width: 30px;
     height: 30px;
+    filter: grayscale(100%);
 }
 
 #doge:hover .doge_img{
-    background-color: rgba(0,0,0,0.5);
+    filter: grayscale(0%);
 }

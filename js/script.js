@@ -43,6 +43,11 @@ function ulog(){
     profit_ukupno.innerHTML = numberWithCommas(pr.toFixed(2));
 }
 
+function doged(){
+    var body = document.getElementsByTagName("BODY")[0]
+    body.classList.add("doged")
+}
+
 function change_tab(tab){
     var main1 = document.getElementById("main1")
     var main2 = document.getElementById("main2")
