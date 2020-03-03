@@ -9,35 +9,38 @@
     <title>Kalkulator Profita</title>
 </head>
 <body>
+    <div id="doge" onclick="doged()">
+        <img class="doge_img" src="img/doge.png" alt="">
+    </div>
     <div class="wrapper">
         <div class="header">
             <div class="option selected" id="tab1" onclick="change_tab(1)">
                 <div class="option_text">
-                    Budzet
+                    Буџет
                 </div>
             </div>
             <div class="option" id="tab2" onclick="change_tab(2)">
                 <div class="option_text">
-                    Ulog
+                    Улог
                 </div>
             </div>
         </div>
         <div id="main1">
             <div class="input">
                 <div class="input_wrapper">
-                    <div class="input_label">Budzet</div>
+                    <div class="input_label">Буџет</div>
                     <input class="input_field" type="number" min="0" step="0.01" id="budzet" oninput="budzet()">
                 </div>
             </div>
             <div class="input">
                 <div class="input_wrapper">
-                    <div class="input_label">Prva kvota</div>
+                    <div class="input_label">Прва квота</div>
                     <input class="input_field" type="number" min="0" step="0.01" id="kvota1" oninput="budzet()">
                 </div>
             </div>
             <div class="input">
                 <div class="input_wrapper">
-                    <div class="input_label">Druga kvota</div>
+                    <div class="input_label">Друга квота</div>
                     <input class="input_field" type="number" min="0" step="0.01" id="kvota2" oninput="budzet()">
                 </div>
             </div>
@@ -45,19 +48,19 @@
         <div id="main2" class="hidden">
             <div class="input">
                 <div class="input_wrapper">
-                    <div class="input_label">Ulog na prvu kvotu</div>
+                    <div class="input_label">Улог на прву квоту</div>
                     <input class="input_field" type="number" min="0" step="0.01" id="ulog" oninput="ulog()">
                 </div>
             </div>
             <div class="input">
                 <div class="input_wrapper">
-                    <div class="input_label">Prva kvota</div>
+                    <div class="input_label">Прва квота</div>
                     <input class="input_field" type="number" min="0" step="0.01" id="kvota1_ulog" oninput="ulog()">
                 </div>
             </div>
             <div class="input">
                 <div class="input_wrapper">
-                    <div class="input_label">Druga kvota</div>
+                    <div class="input_label">Друга квота</div>
                     <input class="input_field" type="number" min="0" step="0.01" id="kvota2_ulog" oninput="ulog()">
                 </div>
             </div>
@@ -66,7 +69,7 @@
         <div class="output">
             <div class="output_inner">
                 <div class="output_inner_label">
-                    <div class="output_inner_label_text">Ulog na manju</div>
+                    <div class="output_inner_label_text">Улог на мању</div>
                 </div>
                 <div class="output_inner_wrapper" >
                     <div class="output_inner_wrapper_text" id="ulog1"></div>
@@ -74,7 +77,7 @@
             </div>
             <div class="output_inner">
                 <div class="output_inner_label">
-                    <div class="output_inner_label_text">Ulog na veću</div>
+                    <div class="output_inner_label_text">Улог на већу</div>
                 </div>
                 <div class="output_inner_wrapper" >
                     <div class="output_inner_wrapper_text" id="ulog2"></div>
@@ -82,7 +85,7 @@
             </div>
             <div class="output_inner">
                 <div class="output_inner_label">
-                    <div class="output_inner_label_text">Profit</div>
+                    <div class="output_inner_label_text">Профит</div>
                 </div>
                 <div class="output_inner_wrapper" >
                     <div class="output_inner_wrapper_text" id="profit"></div>
@@ -90,17 +93,13 @@
             </div>
             <div class="output_inner">
                 <div class="output_inner_label">
-                    <div class="output_inner_label_text">Profit u RSD</div>
+                    <div class="output_inner_label_text">Профит у Дин</div>
                 </div>
                 <div class="output_inner_wrapper" >
                     <div class="output_inner_wrapper_text" id="profit_ukupno"></div>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div id="doge" onclick="doged()">
-        <img class="doge_img" src="img/doge.png" alt="">
     </div>
 </body>
 </html>

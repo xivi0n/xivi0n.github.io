@@ -19,11 +19,35 @@ function budzet(){
     var f_in1 = budzet/(1+diff);
     var f_in2 = diff*f_in1;
     var pr = kvota1*f_in1-(f_in1+f_in2);
-
-    ulog1.innerHTML = numberWithCommas(f_in1.toFixed(2));
-    ulog2.innerHTML = numberWithCommas(f_in2.toFixed(2));
-    profit.innerHTML = (100*pr/budzet).toFixed(2)+"%";
-    profit_ukupno.innerHTML = numberWithCommas(pr.toFixed(2));
+    if(!Number.isNaN(pr)){
+        if(pr<0){
+            profit.classList.add("bad-profit")
+            profit.classList.remove("ok-profit")
+            profit_ukupno.classList.add("bad-profit")
+            profit_ukupno.classList.remove("ok-profit")
+        }
+        else{
+            profit.classList.remove("bad-profit")
+            profit.classList.add("ok-profit")
+            profit_ukupno.classList.remove("bad-profit")
+            profit_ukupno.classList.add("ok-profit")
+        }
+        ulog1.innerHTML = numberWithCommas(f_in1.toFixed(2));
+        ulog2.innerHTML = numberWithCommas(f_in2.toFixed(2));
+        profit.innerHTML = (100*pr/budzet).toFixed(2)+"%";
+        profit_ukupno.innerHTML = numberWithCommas(pr.toFixed(2));
+    }
+    else{
+        profit.classList.remove("bad-profit")
+        profit.classList.remove("ok-profit")
+        profit_ukupno.classList.remove("bad-profit")
+        profit_ukupno.classList.remove("ok-profit")
+        ulog1.innerHTML = "";
+        ulog2.innerHTML = "";
+        profit.innerHTML = "";
+        profit_ukupno.innerHTML = "";
+    }
+    
 }
 
 function ulog(){
@@ -37,14 +61,39 @@ function ulog(){
     var f_in2 = f_in1*kvota1/kvota2;
     var pr = kvota1*f_in1-(f_in1+f_in2);
     var budzet = f_in1 + f_in2;
-    ulog1.innerHTML = numberWithCommas(f_in1.toFixed(2));
-    ulog2.innerHTML = numberWithCommas(f_in2.toFixed(2));
-    profit.innerHTML = (100*pr/budzet).toFixed(2)+"%";
-    profit_ukupno.innerHTML = numberWithCommas(pr.toFixed(2));
+    if(!Number.isNaN(pr)){
+        if(pr<0){
+            profit.classList.add("bad-profit")
+            profit.classList.remove("ok-profit")
+            profit_ukupno.classList.add("bad-profit")
+            profit_ukupno.classList.remove("ok-profit")
+        }
+        else{
+            profit.classList.remove("bad-profit")
+            profit.classList.add("ok-profit")
+            profit_ukupno.classList.remove("bad-profit")
+            profit_ukupno.classList.add("ok-profit")
+        }
+        ulog1.innerHTML = numberWithCommas(f_in1.toFixed(2));
+        ulog2.innerHTML = numberWithCommas(f_in2.toFixed(2));
+        profit.innerHTML = (100*pr/budzet).toFixed(2)+"%";
+        profit_ukupno.innerHTML = numberWithCommas(pr.toFixed(2));
+    }
+    else{
+        profit.classList.remove("bad-profit")
+        profit.classList.remove("ok-profit")
+        profit_ukupno.classList.remove("bad-profit")
+        profit_ukupno.classList.remove("ok-profit")
+        ulog1.innerHTML = "";
+        ulog2.innerHTML = "";
+        profit.innerHTML = "";
+        profit_ukupno.innerHTML = "";
+    }
 }
 
 function doged(){
     var body = document.getElementsByTagName("BODY")[0]
+    document.getElementById("doge").classList.add("hidden")
     body.classList.add("doged")
 }
 
