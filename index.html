@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="sr">
+<head>
+    <link rel="icon" href="img/favicon.ico">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <script type="text/javascript" src="js/script.js"></script>
+    <title>Kalkulator Profita</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            <div class="option selected" id="tab1" onclick="change_tab(1)">
+                <div class="option_text">
+                    Budzet
+                </div>
+            </div>
+            <div class="option" id="tab2" onclick="change_tab(2)">
+                <div class="option_text">
+                    Ulog
+                </div>
+            </div>
+        </div>
+        <div id="main1">
+            <div class="input">
+                <div class="input_wrapper">
+                    <div class="input_label">Budzet</div>
+                    <input class="input_field" type="number" min="0" step="0.01" id="budzet" oninput="budzet()">
+                </div>
+            </div>
+            <div class="input">
+                <div class="input_wrapper">
+                    <div class="input_label">Prva kvota</div>
+                    <input class="input_field" type="number" min="0" step="0.01" id="kvota1" oninput="budzet()">
+                </div>
+            </div>
+            <div class="input">
+                <div class="input_wrapper">
+                    <div class="input_label">Druga kvota</div>
+                    <input class="input_field" type="number" min="0" step="0.01" id="kvota2" oninput="budzet()">
+                </div>
+            </div>
+        </div>
+        <div id="main2" class="hidden">
+            <div class="input">
+                <div class="input_wrapper">
+                    <div class="input_label">Ulog na prvu kvotu</div>
+                    <input class="input_field" type="number" min="0" step="0.01" id="ulog" oninput="ulog()">
+                </div>
+            </div>
+            <div class="input">
+                <div class="input_wrapper">
+                    <div class="input_label">Prva kvota</div>
+                    <input class="input_field" type="number" min="0" step="0.01" id="kvota1_ulog" oninput="ulog()">
+                </div>
+            </div>
+            <div class="input">
+                <div class="input_wrapper">
+                    <div class="input_label">Druga kvota</div>
+                    <input class="input_field" type="number" min="0" step="0.01" id="kvota2_ulog" oninput="ulog()">
+                </div>
+            </div>
+        </div>
+
+        <div class="output">
+            <div class="output_inner">
+                <div class="output_inner_label">
+                    <div class="output_inner_label_text">Ulog na manju</div>
+                </div>
+                <div class="output_inner_wrapper" >
+                    <div class="output_inner_wrapper_text" id="ulog1"></div>
+                </div>
+            </div>
+            <div class="output_inner">
+                <div class="output_inner_label">
+                    <div class="output_inner_label_text">Ulog na veću</div>
+                </div>
+                <div class="output_inner_wrapper" >
+                    <div class="output_inner_wrapper_text" id="ulog2"></div>
+                </div>
+            </div>
+            <div class="output_inner">
+                <div class="output_inner_label">
+                    <div class="output_inner_label_text">Profit</div>
+                </div>
+                <div class="output_inner_wrapper" >
+                    <div class="output_inner_wrapper_text" id="profit"></div>
+                </div>
+            </div>
+            <div class="output_inner">
+                <div class="output_inner_label">
+                    <div class="output_inner_label_text">Profit u RSD</div>
+                </div>
+                <div class="output_inner_wrapper" >
+                    <div class="output_inner_wrapper_text" id="profit_ukupno"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="doge">
+        <img class="doge_img" src="img/doge.png" alt="">
+    </div>
+</body>
+</html>
