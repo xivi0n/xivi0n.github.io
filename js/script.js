@@ -11,11 +11,6 @@ function budzet(){
     var profit = document.getElementById("main0_profit");
     var profit_ukupno = document.getElementById("main0_profit_ukupno");
     var novo_stanje = document.getElementById("main0_novo_stanje");
-    if (kvota1>kvota2){
-        var pom = kvota1;
-        kvota1 = kvota2;
-        kvota2 = pom;
-    }
     var diff = kvota1/kvota2;
     var f_in1 = budzet/(1+diff);
     var f_in2 = diff*f_in1;
