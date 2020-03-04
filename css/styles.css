@@ -6,68 +6,15 @@
 .ok-profit{color:#0EAC51;}
 .bad-profit{color: #D73C2C;}
 
-.hidden{
-    display:none!important;
-}
-
-.doged{
-    background-image: url(../img/background.jpg);
-    background-repeat: repeat;
-    background-color: none!important;
-    background-size: 30%;
-}
-
 .selected{
     background-color: #282828!important;
 }
 
-html{
-    font-family: openSans;
+.hidden{
+    display:none!important;
 }
 
-body{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-    padding: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: #202020;
-}
-
-.wrapper{
-    border-radius: 25px;
-    overflow: hidden;
-    border:solid black 1px;
-    display: flex;
-    flex-direction: column;
-    min-height: 500px;
-    min-width: 300px;
-    background-color: #282828;
-    color:white;
-    position: relative;
-}
-/*#region header*/
-.header{
-    width: 100%;
-    height: 50px;
-    background-color: #2c3e50;
-    display: flex;
-    flex-direction: row;
-    position: relative;
-}
-
-.option{
-    flex-basis: 50%;
-    height: 100%;
-}
-
-.option:hover{
-    background-color: #34495e;
-}
-
-.option_text{
+.text{
     width: 100%;
     height: 100%;
     display: flex;
@@ -75,140 +22,172 @@ body{
     flex-direction: column;
     text-align: center;
     vertical-align: middle;
-    font-size: 20px;
     -webkit-user-select: none; /* Safari */        
     -moz-user-select: none; /* Firefox */
     -ms-user-select: none; /* IE10+/Edge */
     user-select: none; /* Standard */
 }
 
-/*#endregion header*/
-.main{
-    display: flex;
-    flex-direction: column;
-    flex: auto;
-    position: relative;
-    box-sizing: border-box;
-    padding: 20px 0 0 0;
-}
-
-.input{
-    width: 100%;
-    flex-grow: 1;
-    flex-shrink: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
-
-.input_wrapper{
-    display: flex;
-    flex-direction: column;
-    width: 60%;
-    min-height: 80px;
-    position: relative;
-}
-
-.input_label{
-    width: 100%;
-    text-align: left;
-    font-size: 15px;
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
-}
-
-.input_field{
+html{
+    color: #ecf0f1;
     font-family: openSans;
-    font-size: 16.5px;
-    height: 20px;
-    background-color: #282828;
-    border: none;
-    border-bottom: solid 3px;
-    border-bottom-color: #707b7c;
-    caret-color: #bdc3c7;
-    color:white;
+    width: 100%;
+    height: 100%;
 }
 
-.input_field:focus{
-    border-bottom: solid 3px;
-    border-bottom-color: #bdc3c7;
-    outline-width: 0;
-}
-
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-    -webkit-appearance: none;
+body{
     margin: 0;
-}
-
-input[type=number] {
-    -moz-appearance:textfield;
-}
-
-.output{
-    background-color: #2e2e2e;
-    display: flex;
-    width: 100%;
-    flex-direction: column;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-}
-
-.output_inner{
-    display: flex;
-    min-height: 50px;
-    width: 100%;
-    flex-grow: 1;
-    flex-shrink: 1;
-    position: relative;
-}
-
-.output_inner_label{
-    border-top: solid 1px black;
-    box-sizing: border-box;
-    padding: 5px 15px;
-    width: 50%;
-    background-color: #2c3e50;
-}
-.output_inner_label_text{
+    padding: 0;
     width: 100%;
     height: 100%;
+    background-color: #202020;
+}
+
+/*#region calc */
+
+#calc{
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    text-align: left;
-    vertical-align: middle;
-    font-size: 16px;
-    -webkit-user-select: none; /* Safari */        
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
-}
-
-.output_inner_wrapper{
-    box-sizing: border-box;
-    padding-left: 10px;
-    width: 50%;
-    border-top: solid 1px black;
-    border-left: solid 1px black;
-}
-
-.output_inner_wrapper_text{
+    flex: 1 1 auto;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    text-align: left;
-    vertical-align: middle;
-    font-size: 16.5px;
+    position: relative;
+    background-color: #282828;
 }
+
+    /*#region calc-header */
+    #calc-header{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        min-height: 40px;
+        height: 40px;
+        background-color: #2c3e50;
+    }
+
+    .tab{
+        display: flex;
+        flex: 1 1 0;
+        height: 100%;
+    }
+
+    .tab-middle{
+        border-left: 1px solid #202020;
+        border-right: 1px solid #202020;
+    }
+
+    .tab .text{
+        font-size: 18px;
+    }
+    /*#endregion calc-header */
+
+    /*#region calc-body */
+    #calc-body{
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .main{
+        display: flex;
+        flex-direction: column;
+        flex: 1 1 auto;
+        width: 100%;
+        height: 100%;
+        justify-content: space-between;
+    }
+        /*#region input-wrapper */
+
+        .main-input-wrapper{
+            flex: 1 1 auto;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            box-sizing: border-box;
+            padding: 20px;
+        }
+
+        .main-input{
+            display: flex;
+            flex-direction: column;
+            flex: 1 1 0;
+            align-self: center;
+            width: auto;
+            box-sizing: border-box;
+            padding: 10px 3px;
+            /* margin: 10px 0; */
+        }
+
+        .main-input .text{
+            text-align: left;
+            font-size: 15px;
+        }
+
+        .input-field{
+            align-self: center;
+            font-family: openSans;
+            font-size: 16.5px;
+            height: 20px;
+            background-color: #282828;
+            border: none;
+            border-bottom: solid 3px;
+            border-bottom-color: #707b7c;
+            caret-color: #bdc3c7;
+            color:white;
+        }
+        
+        .input-field:focus{
+            border-bottom: solid 3px;
+            border-bottom-color: #bdc3c7;
+            outline-width: 0;
+        }
+        
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        
+        input[type=number] {
+            -moz-appearance:textfield;
+        }
+
+        /*#endregion input-wrapper */
+    
+        /*#region output-wrapper */
+        .main-output-wrapper{
+            background-color: #2e2e2e;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            font-size: 15px;
+            flex: 1 1 0;
+        }
+
+        .main-output{
+            border-top: solid 1px black;
+            display: flex;
+            flex-direction: row;
+            flex: 1 1 0;
+        }
+
+        .output-label{
+            flex:1 1 0;
+            background-color: #2c3e50;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        .output-value{
+            flex:1 1 0;
+        }
+        /*#endregion output-wrapper */
+
+    /*#endregion calc-body */
+/*#endregion calc */
 
 #doge{
+    display: none;
     position: absolute;
     bottom: 0;
     right: 0;
@@ -224,3 +203,149 @@ input[type=number] {
 #doge:hover .doge_img{
     filter: grayscale(0%);
 }
+
+.doged{
+    background-image: url(../img/background.jpg);
+    background-repeat: repeat;
+    background-color: none!important;
+    background-size: 30%;
+}
+
+@media screen and (min-width: 426px) and (min-height: 580px){
+
+    #doge{
+        display: inherit;
+    }
+
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        height: 100vh;
+        overflow-x: hidden;
+    }
+    
+    #calc{
+        border-radius: 25px;
+        overflow: hidden;
+        border:solid black 1px;
+        display: flex;
+        flex-direction: column;
+        min-height: 500px;
+        min-width: 300px;
+        width: auto;
+        height: auto;
+        flex: inherit;
+        background-color: #282828;
+        color:white;
+        position: relative;
+    }
+
+    #calc-body{
+        display: flex;
+        flex-direction: column;
+        flex: auto;
+        position: relative;
+        box-sizing: inherit;
+        padding: inherit;
+    }
+
+    .main-input-wrapper{
+        padding: 20px;
+    }
+}
+
+@media screen and (max-height: 580px) and (min-width: 426px){
+
+    #doge{
+        display: inherit;
+    }
+
+    html{
+        width: inherit;
+        height: inherit;
+    }
+
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100vw;
+        overflow-x: hidden;
+    }
+    
+    #calc{
+        border-radius: 25px;
+        overflow: hidden;
+        border:solid black 1px;
+        display: flex;
+        flex-direction: column;
+        min-height: 500px;
+        min-width: 300px;
+        width: auto;
+        height: auto;
+        flex: inherit;
+        background-color: #282828;
+        color:white;
+        position: relative;
+    }
+
+    #calc-body{
+        display: flex;
+        flex-direction: column;
+        flex: auto;
+        position: relative;
+        box-sizing: inherit;
+        padding: inherit;
+    }
+
+    .main-input-wrapper{
+        padding: 20px;
+    }
+}
+
+@media screen and (min-height: 700px) and (max-width: 427px){
+
+    #doge{
+        display: inherit;
+    }
+
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+        overflow-x: hidden;
+    }
+    
+    #calc{
+        border-radius: 25px;
+        overflow: hidden;
+        border:solid black 1px;
+        display: flex;
+        flex-direction: column;
+        min-height: 500px;
+        min-width: 300px;
+        width: auto;
+        height: auto;
+        flex: inherit;
+        background-color: #282828;
+        color:white;
+        position: relative;
+    }
+
+    #calc-body{
+        display: flex;
+        flex-direction: column;
+        flex: auto;
+        position: relative;
+        box-sizing: inherit;
+        padding: inherit;
+    }
+
+    .main-input-wrapper{
+        padding: 20px;
+    }
+}
+
